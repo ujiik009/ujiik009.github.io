@@ -22,10 +22,11 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            padding:10px;
+            padding: 10px;
             cursor: pointer;
             border-radius: 20px;
         }
+
         #btn-jump:active {
             background-color: rgb(33, 33, 33);
         }
@@ -34,8 +35,8 @@
 
 <body onload="startGame()">
     <div style="display: flex;justify-content: center;">
-        <div id="btn-jump" onmousedown="accelerate(-0.2)" onmouseup="accelerate(0.05)">
-            <div>ACCELERATE</div>
+        <div id="btn-jump" onmousedown="accelerate(-0.2)" ontouchstart="accelerate(-0.2)" ontouchend="accelerate(0.05)" onmouseup="accelerate(0.05)" >
+            <div>touch</div>
         </div>
     </div>
 
