@@ -15,7 +15,8 @@
             background-color: #f1f1f1;
         }
 
-        #btn-jump {
+        #btn-jump,
+        #restart {
             height: 100px;
             width: 100px;
             background-color: gray;
@@ -25,6 +26,7 @@
             padding: 10px;
             cursor: pointer;
             border-radius: 20px;
+            margin: 5px;
         }
 
         #btn-jump:active {
@@ -34,9 +36,13 @@
 </head>
 
 <body onload="startGame()">
-    <div style="display: flex;justify-content: center;">
-        <div id="btn-jump" onmousedown="accelerate(-0.2)" ontouchstart="accelerate(-0.2)" ontouchend="accelerate(0.05)" onmouseup="accelerate(0.05)" >
+    <div style="display: flex;justify-content: center;margin: 5px;">
+        <div id="btn-jump" onmousedown="accelerate(-0.2)" ontouchstart="accelerate(-0.2)" ontouchend="accelerate(0.05)"
+            onmouseup="accelerate(0.05)">
             <div>touch</div>
+        </div>
+        <div id="restart" onclick="restart()" ontouch="restart()">
+            <div>restart</div>
         </div>
     </div>
 
@@ -51,7 +57,13 @@
             myGamePiece = new component(30, 30, "red", 10, 120);
             myGamePiece.gravity = 0.05;
             myScore = new component("30px", "Consolas", "black", 280, 40, "text");
+            // myGameArea.clear();
             myGameArea.start();
+
+        }
+
+        function restart() {
+            location.reload()
         }
 
         var myGameArea = {
